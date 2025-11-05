@@ -24,10 +24,10 @@ def launch_app():
         page_class = {
             'start': StartGUI,
             'analysis': AnalysisGUI,
-            'analysis_Heli': heli.heliMain.HeliMain,
+            'heliMain': heli.heliMain.HeliMain,
             'heliExport': heli.heliExport.HeliExport,
             'heliGraphs': heli.HeliGraphs,
-            'analysis_Fail': failures.failMain.FailMain,
+            'failMain': failures.failMain.FailMain,
             'failGraphs': failures.failGraphs.FailGraphs,
             'failExport': failures.failExport.FailExport,
             'reimport': ReimportGUI,

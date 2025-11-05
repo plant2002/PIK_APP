@@ -41,7 +41,43 @@ class HeliExport:
 
         self.canvas.create_rectangle(27.0, 117.0, 577.0, 667.0, fill="#D9D9D9", outline="")
 
-        # Initialize the basic screen
-        #self.show_heli_buttons()
+        options_map = {
+            "Export data for flights": "fn",
+            "Export data for specific flight": "fn_spec",
+            "Export data of all flights with error": "error",
+            "Export data for dates": "dates",
+            "Export data for a specific date": "date_spec",
+        }
+
+        # ---- Button Styling ----
+        blue = "#0033B8"
+        white = "#FFFFFF"
+
+        button_style = {
+            "bg": blue,
+            "fg": white,
+            "activebackground": "#002a94",
+            "activeforeground": white,
+            "font": ("Segoe UI", 10, "bold"),
+            "relief": "flat",
+            "bd": 0,
+            "width": 25,
+            "height": 2,
+            "cursor": "hand2"
+        }
+
+        # ---- Create Buttons ----
+        start_y = 135  # position under the title
+        spacing = 42
+
+        for i, (label, key) in enumerate(options_map.items()):
+            btn = Button(
+                self.canvas,
+                text=label.title(),  # capitalized for consistency
+                **button_style,
+                command=lambda k=key: self.handle_export(k)
+            )
+            btn.place(x=625, y=start_y + i * spacing, width=350, height=35)
+
     def destroy(self):
         self.frame.destroy()

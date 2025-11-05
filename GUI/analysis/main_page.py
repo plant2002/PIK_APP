@@ -35,12 +35,6 @@ class AnalysisGUI:
         self.analysisbutton_image_2 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/button_2.png"))
         self.analysisbutton_image_3 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/button_3.png"))
 
-        # Failures & Other buttons images
-        self.analysis_failures_button2 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/button_2.png"))
-        self.analysis_failures_button3 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/button_3.png"))
-        self.analysis_other_button2 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_2.png"))
-        self.analysis_other_button3 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_3.png"))
-
         # Background / banner
         self.canvas.create_rectangle(0.0, 0.0, 1024.0, 98.5, fill="#0033B8", outline="")
         self.canvas.create_text(27.5, 30.0, anchor="nw", text="PIK-APP for 350B2", fill="#FFFFFF",
@@ -67,11 +61,11 @@ class AnalysisGUI:
         text_label.pack(pady=20)
 
         # Failures button
-        button_failures = Button(self.content_frame, image=self.analysisbutton_image_3, command=lambda: self.show_frame('analysis_expo'), relief="flat")
+        button_failures = Button(self.content_frame, image=self.analysisbutton_image_3, command=lambda: self.show_frame('failMain'), relief="flat")
         button_failures.pack(pady=5)
 
         # Other button
-        button_other = Button(self.content_frame, image=self.analysisbutton_image_2, command=lambda: self.show_frame('analysis_Heli'), relief="flat")
+        button_other = Button(self.content_frame, image=self.analysisbutton_image_2, command=lambda: self.show_frame('heliMain'), relief="flat")
         button_other.pack(pady=5)
 
         self.widgets_list.extend([text_label, button_failures, button_other])

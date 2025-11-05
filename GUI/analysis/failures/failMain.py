@@ -1,48 +1,64 @@
-from tkinter import Button, Label, Entry, StringVar, OptionMenu, PhotoImage
+from tkinter import Frame, Label, Button, PhotoImage, Canvas
 import os
-import tkinter as tk
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
-ASSETS_PATH = os.path.join(ROOT_DIR, "assets")
-ASSETS_PATH = ASSETS_PATH.replace("\\", "/")
+ASSETS_PATH = os.path.join(ROOT_DIR, "assets").replace("\\", "/")
 
 class FailMain:
-    def __init__(self, master, controller, show_frame):
+    def __init__(self, master, show_frame):
         self.master = master
-        self.frame = tk.Frame(master, bg="#D9D9D9")  # section container
+        self.show_frame = show_frame
+        self.selected_value = None
+        self.current_option = "Basics"
 
-        self.analysis_failures_image1 = PhotoImage(file = os.path.join(ASSETS_PATH,"analysis/analysis_failures/image_1.png"))
-        self.analysis_failures_button1 = PhotoImage(file = os.path.join(ASSETS_PATH,"analysis/analysis_failures/button_1.png"))
-        self.analysis_failures_button2 = PhotoImage(file = os.path.join(ASSETS_PATH,"analysis/analysis_failures/button_2.png"))
-        self.analysis_failures_button3 = PhotoImage(file = os.path.join(ASSETS_PATH,"analysis/analysis_failures/button_3.png"))
-
-    def build(self):
+        # --- Main Frame ---
+        self.frame = Frame(master)
         self.frame.pack(fill="both", expand=True)
-        Label(self.frame, text="FAILURES SECTION", font=("Arial", 18)).pack(pady=10)
 
-        options_map = {
-            "Overlimits per Flight": "ovr_flight",
-            "Overlimits per Date": "ovr_date",
-            "Errors per Flight": "error_fn",
-            "Errors per Date": "error_dates",
-        }
+        # --- Canvas Base ---
+        self.canvas = Canvas(self.frame, bg="#FFFFFF", height=682, width=1024)
+        self.canvas.pack(fill="both", expand=True)
 
-        selected_option = StringVar(value=list(options_map.keys())[0])
-        OptionMenu(self.frame, selected_option, *options_map.keys()).pack(pady=5)
+        # --- Subframes ---
+        self.content_frame = Frame(self.canvas, bg="#D9D9D9")
+        self.content_frame.place(x=601.0, y=117.0, width=399.0, height=240.0)
 
-        Button(
-            self.frame,
-            text="Go",
-            command=lambda: self.run(selected_option.get(), options_map)
-        ).pack(pady=5)
+        self.output_frame = Frame(self.canvas, bg="#D9D9D9")
+        self.output_frame.place(x=27.0, y=117.0, width=550.0, height=550.0)
 
-    def run(self, selected_display_text, options_map):
-        option = options_map[selected_display_text]
-        # Example call: pass the master to analysis functions
-        if option == "ovr_flight":
-            self.af.overlimits_flight(self.master, 100, 120)
-        elif option == "ovr_date":
-            self.af.overlimits_date(self.master, "2025-01-01", "2025-01-10")
+        self.widgets_list = []
+        self.result_label = None
+
+        # --- Images ---
+        self.banner_image = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/image_1.png"))
+        self.return_home = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_1.png"))
+        self.failures_button2 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/button_2.png"))
+        self.failures_button3 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/button_3.png"))
+
+        # --- Banner / Header ---
+        self.canvas.create_rectangle(0.0, 0.0, 1024.0, 98.5, fill="#0033B8", outline="")
+        self.canvas.create_text(27.5, 30.0, anchor="nw", text="PIK-APP for 350B2",fill="#FFFFFF", font=("InriaSans Regular", 30 * -1))
+        self.canvas.create_image(804.0, 539.0, image=self.banner_image)
+
+        # --- Return Button (top-right) ---
+        button_1 = Button(self.canvas, image=self.return_home, borderwidth=0, highlightthickness=0,command=lambda: show_frame('start'), relief="flat")
+        button_1.place(x=754.0, y=25.0, width=253.0, height=48.0)
+
+        # --- Left Grey Panel ---
+        self.canvas.create_rectangle(27.0, 117.0, 577.0, 667.0, fill="#D9D9D9", outline="")
+
+        # --- Initialize the failure section ---
+        self.show_fail_buttons()
+
+    def show_fail_buttons(self):
+        #export button
+        Export = Button(self.canvas, image = self.failures_button2,borderwidth=0,highlightthickness=0,command=lambda: self.show_frame('failExport'),relief="flat")
+        Export.place(x=823.0,y=259.0,width=165.0,height=50.0)
+
+        #graphs button
+        Graphs = Button(self.canvas, image = self.failures_button3, borderwidth=0, highlightthickness=0, command=lambda: self.show_frame('failGraphs'), relief="flat")
+        Graphs.place(x=636.0, y=259.0, width=165.0, height=50.0)
+        self.widgets_list.extend([Export, Graphs])
 
     def destroy(self):
         self.frame.destroy()

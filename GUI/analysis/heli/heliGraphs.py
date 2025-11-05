@@ -1,4 +1,4 @@
-from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas
+from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas, ttk
 import os
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
@@ -41,7 +41,39 @@ class HeliGraphs:
         button_1 = Button(self.canvas, image=self.return_home, borderwidth=0, highlightthickness=0, command=lambda: show_frame('start'), relief="flat")
         button_1.place(x=754.0, y=25.0, width=253.0, height=48.0)
 
-        self.canvas.create_rectangle(27.0, 117.0, 577.0, 667.0, fill="#D9D9D9", outline="")
+        options_map = {
+        "Graph of flight time / date": "fd_date",
+        "Graph of time / date": "time_date",
+        "Graph of engine cycles / flight": "engCyc_fn",
+        "Graph of engine cycles / date": "engCyc_date",
+            }
+
+        # Create button styles
+        button_style = {
+            "bg": "#0033B8",
+            "fg": "#FFFFFF",
+            "activebackground": "#002a94",  # slightly darker blue
+            "activeforeground": "#FFFFFF",
+            "font": ("Segoe UI", 10, "bold"),
+            "relief": "flat",
+            "bd": 0,
+            "width": 25,
+            "height": 2,
+            "cursor": "hand2"
+        }
+
+        # Create a vertical stack of buttons in the middle of the grey rectangle
+        start_y = 150
+        spacing = 45
+
+        for i, (label, key) in enumerate(options_map.items()):
+            btn = Button(
+                self.canvas,
+                text=label,
+                **button_style,
+                command=lambda k=key: print(f"Selected: {k}")  # replace with your graphing function
+            )
+            btn.place(x=630, y=start_y + i * spacing, width=340, height=35)
 
         # Initialize the basic screen
         #self.show_heli_buttons()
