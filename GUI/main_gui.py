@@ -2,14 +2,12 @@ from tkinterdnd2 import TkinterDnD
 from .start_page import StartGUI
 from .analysis.main_page import AnalysisGUI
 from .reimport_page import ReimportGUI
-from .analysis.heliMain import OtherSection
-from .analysis.failures_section import FailuresSection
-from .analysis.heliExport import HeliExport
-from .analysis.heliGraphs import HeliGraphs
+from .analysis import heli
+from .analysis import failures
 
 def launch_app():
     root = TkinterDnD.Tk()
-    root.geometry("1024x682")
+    root.geometry("1024x682") #spreminjamo velikost okna?
     root.configure(bg="#FFFFFF")
 
     frames = {}
@@ -22,14 +20,16 @@ def launch_app():
             except Exception:
                 pass
 
-        # Pick the correct page class
+        # pages - doesn't work any other way
         page_class = {
             'start': StartGUI,
             'analysis': AnalysisGUI,
-            'analysis_Heli': OtherSection,
-            'heliExport': HeliExport,
-            'heliGraphs': HeliGraphs,
-            'analysis_Fail': FailuresSection,
+            'analysis_Heli': heli.heliMain.HeliMain,
+            'heliExport': heli.heliExport.HeliExport,
+            'heliGraphs': heli.HeliGraphs,
+            'analysis_Fail': failures.failMain.FailMain,
+            'failGraphs': failures.failGraphs.FailGraphs,
+            'failExport': failures.failExport.FailExport,
             'reimport': ReimportGUI,
             'information': None
         }[page_name]

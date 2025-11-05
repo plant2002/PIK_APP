@@ -1,7 +1,7 @@
 from tkinter import Frame, Canvas, Button, Label, PhotoImage
 import os
-from .failures_section import FailuresSection
-from .heliMain import OtherSection
+from .failures import failMain
+from .heli import heliMain
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets")
@@ -86,12 +86,12 @@ class AnalysisGUI:
         canvas.pack(fill="both", expand=True)
 
         if option == "Failures":
-            failures_section = FailuresSection(self.content_frame, self.master, self.show_frame)
+            failures_section = failMain.FailMain(self.content_frame, self.master, self.show_frame)
             self.widgets_list.append(failures_section)
 
         elif option == "Other":
             self.frame.destroy()
-            self.other_section = OtherSection(self.master, self.master, self.show_frame)
+            self.other_section = heliMain.HeliMain(self.master, self.master, self.show_frame)
             self.other_section.pack(fill="both", expand=True)
 
     def destroy(self):

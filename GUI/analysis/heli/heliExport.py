@@ -1,9 +1,10 @@
 from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas
 import os
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets").replace("\\", "/")
 
-class OtherSection:
+class HeliExport:
     def __init__(self, master, show_frame):
         self.master = master
         self.show_frame = show_frame
@@ -28,13 +29,10 @@ class OtherSection:
         # images
         self.banner_image = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/image_1.png"))
         self.return_home = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_1.png"))
-        self.analysis_other_button2 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_2.png"))
-        self.analysis_other_button3 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_3.png"))
 
         # Background / banner
         self.canvas.create_rectangle(0.0, 0.0, 1024.0, 98.5, fill="#0033B8", outline="")
-        self.canvas.create_text(27.5, 30.0, anchor="nw", text="PIK-APP for 350B2", fill="#FFFFFF",
-                                font=("InriaSans Regular", 30 * -1))
+        self.canvas.create_text(27.5, 30.0, anchor="nw", text="PIK-APP for 350B2", fill="#FFFFFF",font=("InriaSans Regular", 30 * -1))
         self.canvas.create_image(804.0, 539.0, image=self.banner_image)
 
         # Top-right button to go back to start
@@ -43,18 +41,7 @@ class OtherSection:
 
         self.canvas.create_rectangle(27.0, 117.0, 577.0, 667.0, fill="#D9D9D9", outline="")
 
-        # Initialize heli screen
-        self.show_heli_buttons()
-
-    def show_heli_buttons(self):
-         #export button
-        Export = Button(self.canvas, image = self.analysis_other_button2,borderwidth=0,highlightthickness=0,command=lambda: self.show_frame('heliExport'),relief="flat")
-        Export.place(x=823.0,y=259.0,width=165.0,height=50.0)
-
-        #graphs button
-        Graphs = Button(self.canvas, image = self.analysis_other_button3, borderwidth=0, highlightthickness=0, command=lambda: self.show_frame('heliGraphs'), relief="flat")
-        Graphs.place(x=636.0, y=259.0, width=165.0, height=50.0)
-        self.widgets_list.extend([Export, Graphs])
-
+        # Initialize the basic screen
+        #self.show_heli_buttons()
     def destroy(self):
         self.frame.destroy()

@@ -2,11 +2,11 @@ from tkinter import Button, Label, Entry, StringVar, OptionMenu, PhotoImage
 import os
 import tkinter as tk
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets")
 ASSETS_PATH = ASSETS_PATH.replace("\\", "/")
 
-class FailuresSection:
+class FailMain:
     def __init__(self, master, controller, show_frame):
         self.master = master
         self.frame = tk.Frame(master, bg="#D9D9D9")  # section container

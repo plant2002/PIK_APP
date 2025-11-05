@@ -1,10 +1,10 @@
 from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas
 import os
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets").replace("\\", "/")
 
-class HeliExport:
+class HeliGraphs:
     def __init__(self, master, show_frame):
         self.master = master
         self.show_frame = show_frame
@@ -29,6 +29,8 @@ class HeliExport:
         # images
         self.banner_image = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/image_1.png"))
         self.return_home = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_1.png"))
+        self.analysis_other_button2 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_2.png"))
+        self.analysis_other_button3 = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_others/button_3.png"))
 
         # Background / banner
         self.canvas.create_rectangle(0.0, 0.0, 1024.0, 98.5, fill="#0033B8", outline="")

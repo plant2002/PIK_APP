@@ -1,2 +1,2 @@
-from .failures_section import *
-from .heliMain import *
+from . import failures
+from . import heli
