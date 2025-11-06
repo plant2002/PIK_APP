@@ -17,7 +17,6 @@ class StartGUI:
 
         self.startimage_image_1 = PhotoImage(file = os.path.join(ASSETS_PATH, "start/image_1.png"))
         self.startimage_image_2 = PhotoImage(file = os.path.join(ASSETS_PATH, "start/image_2.png"))
-        self.startimage_image_3 = PhotoImage(file = os.path.join(ASSETS_PATH, "start/image_3.png"))
         self.startbutton_image_1 = PhotoImage(file = os.path.join(ASSETS_PATH, "start/button_1.png"))
         self.startbutton_image_2 = PhotoImage(file = os.path.join(ASSETS_PATH, "start/button_2.png"))
         self.startbutton_image_3 = PhotoImage(file = os.path.join(ASSETS_PATH, "start/button_3.png"))
@@ -28,7 +27,6 @@ class StartGUI:
         # Add images to canvas and keep their IDs
         self.image_1_id = self.canvas.create_image(512.0, 341.0, image=self.startimage_image_1)
         self.image_2_id = self.canvas.create_image(730.0, 526.5, image=self.startimage_image_2)
-        self.image_3_id = self.canvas.create_image(79.5, 161.0, image=self.startimage_image_3)
 
         self.button_1 = Button(self.canvas, image=self.startbutton_image_1, borderwidth=0, highlightthickness=0, command=lambda: show_frame('analysis'), relief="flat")
         self.canvas.create_window(657.5, 135.0, anchor="nw", window=self.button_1)

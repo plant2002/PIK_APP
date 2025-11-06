@@ -1,4 +1,5 @@
 from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas
+from PIL import Image, ImageTk
 import os
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
@@ -28,16 +29,22 @@ class FailExport:
 
         # images
         self.banner_image = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/image_1.png"))
-        self.return_home = PhotoImage(file=os.path.join(ASSETS_PATH, "analysis/analysis_failures/button_1.png"))
+        self.homeButton = Image.open(os.path.join(ASSETS_PATH, "home.png"))
+        self.undoButton = Image.open(os.path.join(ASSETS_PATH, "undo.png"))
+        self.homeButton = self.homeButton.resize((40, 40), Image.LANCZOS)
+        self.undoButton = self.undoButton.resize((40, 40), Image.LANCZOS)
+        self.homeButton = ImageTk.PhotoImage(self.homeButton)
+        self.undoButton = ImageTk.PhotoImage(self.undoButton)
+        button_home = Button(self.canvas, image=self.homeButton, command=lambda: self.show_frame('start'), relief="flat")
+        button_home.place(x=890.0, y=25.0) 
+
+        button_undo = Button(self.canvas, image=self.undoButton, command=lambda: self.master.go_back(), relief="flat")
+        button_undo.place(x=950.0, y=25.0)
 
         # Background / banner
         self.canvas.create_rectangle(0.0, 0.0, 1024.0, 98.5, fill="#0033B8", outline="")
         self.canvas.create_text(27.5, 30.0, anchor="nw", text="PIK-APP for 350B2", fill="#FFFFFF",font=("InriaSans Regular", 30 * -1))
         self.canvas.create_image(804.0, 539.0, image=self.banner_image)
-
-        # Top-right button to go back to start
-        button_1 = Button(self.canvas, image=self.return_home, borderwidth=0, highlightthickness=0, command=lambda: show_frame('start'), relief="flat")
-        button_1.place(x=754.0, y=25.0, width=253.0, height=48.0)
 
         self.canvas.create_rectangle(27.0, 117.0, 577.0, 667.0, fill="#D9D9D9", outline="")
 

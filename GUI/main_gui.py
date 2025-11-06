@@ -11,11 +11,14 @@ def launch_app():
     root.configure(bg="#FFFFFF")
 
     frames = {}
+    history = []
 
     def show_frame(page_name):
         # Safely destroy current frame if it exists
+        nonlocal history
         if 'current' in frames and frames['current']:
             try:
+                history.append(frames['current'].page_name)
                 frames['current'].destroy()
             except Exception:
                 pass
@@ -36,7 +39,19 @@ def launch_app():
 
         # Create and show the new page
         frames['current'] = page_class(root, show_frame)
+        frames['current'].page_name = page_name
         frames['current'].frame.tkraise()
+    
+    #call history, return to previous page
+    def go_back():
+        if history:
+            prev_page = history.pop()  # Get last visited
+            show_frame(prev_page)
+        else:
+            print("No previous page in history.")
+    
+    #expose it so it can be called by other functions
+    root.go_back = go_back
 
     # Start with the start page
     show_frame('start')
