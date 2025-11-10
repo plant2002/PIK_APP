@@ -42,6 +42,8 @@ class DragDrop(tk.Canvas):
                     print(f"⚠️ Error copying {file_path}: {e}")
             else:
                 print(f"Skipped non-CSV file: {file_path}")
+            
+        
 
         #  Notify the parent GUI
         if self.on_files_dropped:

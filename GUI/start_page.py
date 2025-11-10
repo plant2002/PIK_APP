@@ -44,6 +44,7 @@ class StartGUI:
         self.canvas.dnd_bind('<<Drop>>', self.canvas._on_drop)
         
         self.canvas.place(x=0, y=0)
+        
     def destroy(self):
         self.frame.destroy()
 
