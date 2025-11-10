@@ -51,10 +51,10 @@ class HeliGraphs:
         button_undo.place(x=950.0, y=25.0)
         
         options_map = {
-        "Graph of flight time / date": "fd_date",
-        "Graph of time / date": "time_date",
-        "Graph of engine cycles / flight": "engCyc_fn",
-        "Graph of engine cycles / date": "engCyc_date",
+        "Graph of flight time / date": "flightTimeDate", #flight times on date
+        "Graph of time / date": "time_date", #???
+        "Graph of engine cycles / flight": "engineCycleFlight", #from/to date? fn? 
+        "Graph of engine cycles / date": "engineCycleDate", #FT? just one date?
             }
 
         # Create button styles

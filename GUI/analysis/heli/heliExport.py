@@ -51,11 +51,11 @@ class HeliExport:
         self.canvas.create_rectangle(27.0, 117.0, 577.0, 667.0, fill="#D9D9D9", outline="")
 
         options_map = {
-            "Export data for flights": "fn",
-            "Export data for specific flight": "fn_spec",
-            "Export data of all flights with error": "error",
-            "Export data for dates": "dates",
-            "Export data for a specific date": "date_spec",
+            "Export data for flights": "heliFN_FTEXP", #flight numbers from/to
+            "Export data for specific flight": "heliFNEXP", #flight number
+            "Export data of all flights with error": "flightsErrorEXP", #flights with specific errors
+            "Export data for dates": "dateFTEXP", #all flights and their data from/to dates
+            "Export data for a specific date": "dateEXP", #all flightand their data on date
         }
 
         # ---- Button Styling ----
