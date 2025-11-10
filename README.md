@@ -1,8 +1,8 @@
 <h1>PIK APP</h1>
 
 TO DO:
-- [ ]	Make sure it's bulletproof (after presentation, such as that date_from is earlier than date_to, fn_from smaller than fn_to etc)
-- [ ]	get the code cleaned up
+- [ ]	Make sure it's bulletproof (such as that date_from is earlier than date_to, fn_from smaller than fn_to etc)
+- [ ]	get the code cleaned up (currently doing a big structure modification)
 - [x]	connect GUI to functions
 - [x]	show graphs in GUI Analysis
 - [x]	change GUI Analysis
@@ -11,7 +11,7 @@ TO DO:
 - [x]	added client, company, helicopter tables to database
 - [ ]	client login/register
 - [ ]	company login/register
-- [ ]	add new helicopter GUI + queries
+- [ ]	add new helicopter GUI + queries 
 
 Analysis: 
 - analysis of parameters according to:
@@ -22,7 +22,8 @@ Analysis:
 - [x]	Name (also show code when choosing so I killed two birds with one stone)
 - [x]	Occurrences
 - [x]	get the name, descr, code of errors happening on date or date_from/date_to
-- [ ]	calculate averages and find the ones that are above/below average and show them on a graph (function error_code_data, not working)<h3>this should probably be left for after presentation though it's super important so idk</h3>
+- [ ]	calculate averages and find the ones that are above/below average and show them on a graph (function error_code_data, not working)
+      <h3>this should probably be left for after presentation though it's super important so idk</h3>
 - [ ] calculate standard deviations (1σ, 2σ,....)
 - [ ] calculate the deviation of a parameter from standard deviation*N (N is chosen by user)
 - [ ] reading the additional data from files (there is more in some)
@@ -45,7 +46,7 @@ Analysis:
 - [x] main page of GUI 
 - [x] GUI is okay now 
 - [x] GUI connect to other frames works okay, all in one file though (GUI2.py) since the links weren't working as they should in multiple files.
-- [ ] Clean up GUI_2
+- [ ] Clean up GUI (modifications being made atm)
 - [x] uploading csv files to a folder 'uploads' 
 - [x] importing into DB (all works and gets inserted. Failures only when a new code is detected)
 - [x] moving csv after it was processed
