@@ -1,9 +1,9 @@
 <h1>PIK APP</h1>
 
 nomeclature of functions: 
-FT (at the end) - from and to
-EXP (at the end) - export
-FTEXP (at the end) - from x to y export
+- FT (at the end) - from and to
+- XP (at the end) - export
+- FTEXP (at the end) - from x to y export
 
 TO DO:
 - [ ]	Make sure it's bulletproof (such as that date_from is earlier than date_to, fn_from smaller than fn_to etc)
