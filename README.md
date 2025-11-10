@@ -2,7 +2,7 @@
 
 nomeclature of functions: 
 - FT (at the end) - from and to
-- XP (at the end) - export
+- EXP (at the end) - export
 - FTEXP (at the end) - from x to y export
 
 TO DO:
