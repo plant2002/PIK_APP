@@ -1,5 +1,28 @@
 <h1>PIK APP</h1>
 
+file structure:
+root/
+      assets/ images
+      core/
+            analysis/
+                  db_communication
+                  errorData/
+                        errorDataExport/
+                        errorDataGraphs/
+                  heliData/
+                        heliDataExport/
+                        heliDataGraphs/
+            files_logic/
+      GUI/
+            analysis/
+                  failures/
+                  heli/
+                  
+nomeclature of functions: 
+FT (at the end) - from and to
+EXP (at the end) - export
+FTEXP (at the end) - from x to y export
+
 TO DO:
 - [ ]	Make sure it's bulletproof (such as that date_from is earlier than date_to, fn_from smaller than fn_to etc)
 - [ ]	get the code cleaned up (currently doing a big structure modification)
