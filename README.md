@@ -1,23 +1,6 @@
 <h1>PIK APP</h1>
 
-FILE STRUCTURE
-root/
-├── assets/
-│   └── images/
-├── core/
-│   ├── analysis/
-│   │   ├── db_communication/
-│   │   ├── errorData/
-│   │   │   ├── errorDataExport/
-│   │   │   └── errorDataGraphs/
-│   │   └── heliData/
-│   │       ├── heliDataExport/
-│   │       └── heliDataGraphs/
-│   └── files_logic/
-└── GUI/
-    └── analysis/
-        ├── failures/
-        └── heli/
+<pre> ```text root/ ├── assets/ │ └── images/ ├── core/ │ ├── analysis/ │ │ ├── db_communication/ │ │ ├── errorData/ │ │ │ ├── errorDataExport/ │ │ │ └── errorDataGraphs/ │ │ └── heliData/ │ │ ├── heliDataExport/ │ │ └── heliDataGraphs/ │ └── files_logic/ └── GUI/ └── analysis/ ├── failures/ └── heli/ ``` </pre>
 
 nomeclature of functions: 
 FT (at the end) - from and to
