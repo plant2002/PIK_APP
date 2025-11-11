@@ -1,6 +1,7 @@
 from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas, ttk
 import os
 from PIL import Image, ImageTk
+from core.analysis.errorData import errorDataGraphs
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets").replace("\\", "/")
@@ -51,10 +52,11 @@ class FailGraphs:
         button_undo.place(x=950.0, y=25.0)
 
         options_map = {
-            "Graphs of overlimits/flights" : "ovr_flight",
-            "Graphs of overlimits/dates" : "ovr_date",
-            "Graphs of occurrences of errors/flights" : "errorfn_occr",
-            "Graphs of errors/dates" : "error_dates",
+            "Errors between dates" : "FDEFT", #flightDateErrorFT
+            "Dates with error" : "FDWE", #flightDateWithError
+            "Number of error occurences in flights" : "ERFT", #flightsErrorFT
+            "Flights with error" : "FWE", #flightsWithError
+            "flighttime of flights when error occurred": 'FTEC', #flightTimeErrorCode
         }
 
         # Create button styles
@@ -80,11 +82,20 @@ class FailGraphs:
                 self.canvas,
                 text=label,
                 **button_style,
-                command=lambda k=key: print(f"Selected: {k}")  # replace with your graphing function
-            )
+                command=lambda k=key: choose_graph(k))  # replace with your graphing function
             btn.place(x=630, y=start_y + i * spacing, width=340, height=35)
 
-        # Initialize the basic screen
-        #self.show_heli_buttons()
+    def choose_graph(self, name):
+        if name == "FDEFT":
+            errorDataGraphs.FlightsDateErrorFT()
+        elif name == "FDWE":
+            errorDataGraphs.FlightsDateWithError
+        elif name == "ERFT":
+            errorDataGraphs.FlightsErrorFT()
+        elif name == "FWE":
+            errorDataGraphs.FlightsWithError()
+        elif name == "FTEC":
+            errorDataGraphs.FlightTimeErrorCode()
+    
     def destroy(self):
         self.frame.destroy()

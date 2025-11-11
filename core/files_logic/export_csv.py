@@ -1,7 +1,6 @@
 import pandas as pd
 from tkinter import filedialog
 from core import db_communication
-import datetime
 
 def export_to_csv_fn_from_to(fn_from, fn_to):
 

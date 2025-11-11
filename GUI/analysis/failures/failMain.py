@@ -69,5 +69,6 @@ class FailMain:
         Graphs.place(x=636.0, y=259.0, width=165.0, height=50.0)
         self.widgets_list.extend([Export, Graphs])
 
+
     def destroy(self):
         self.frame.destroy()

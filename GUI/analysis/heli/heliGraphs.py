@@ -1,6 +1,7 @@
 from tkinter import Frame, Label, Button, OptionMenu, StringVar, PhotoImage, Canvas, ttk
 import os
 from PIL import Image, ImageTk
+from core.analysis.heliData import heliDataGraphs
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets").replace("\\", "/")
@@ -51,11 +52,13 @@ class HeliGraphs:
         button_undo.place(x=950.0, y=25.0)
         
         options_map = {
-        "Graph of flight time / date": "flightTimeDate", #flight times on date
-        "Graph of time / date": "time_date", #???
-        "Graph of engine cycles / flight": "engineCycleFlight", #from/to date? fn? 
-        "Graph of engine cycles / date": "engineCycleDate", #FT? just one date?
-            }
+        "Engine Cycles per day": "ECDFT", #engineCycleDateFT
+        "Engine Cycles per flight": "FECFT", #FlightEngineCycleFT
+        "Flight time per days": "FOTDFT", #FLightOverallTimeDateFT
+        "Overlimits per flight(s)": "FOFT", #FlightOverlimitsFT
+        "Flight time on specific date": "FTD", #FlightTimeDate
+        "Overlimits per days": "ODFT", #OverlimitsDateFT
+        }
 
         # Create button styles
         button_style = {
@@ -80,11 +83,22 @@ class HeliGraphs:
                 self.canvas,
                 text=label,
                 **button_style,
-                command=lambda k=key: print(f"Selected: {k}")  # replace with your graphing function
-            )
+                command=lambda k=key: choose_graph(k))  # replace with your graphing function
             btn.place(x=630, y=start_y + i * spacing, width=340, height=35)
 
-        # Initialize the basic screen
-        #self.show_heli_buttons()
+    def choose_graph(self, name):
+        if name == "ECDFT":
+            heliDataGraphs.EngineCycleDateFT()
+        elif name == "FECFT":
+            heliDataGraphs.FlightEngineCycleFT()
+        elif name == "FOTDFT":
+            heliDataGraphs.FlightOverallTimeDateFT()
+        elif name == "FOFT":
+            heliDataGraphs.FlightOverlimitsFT()
+        elif name == "FTD":
+            heliDataGraphs.FlightTimeDate()
+        elif name == "ODFT":
+            heliDataGraphs.OverlimitsDateFT()
+
     def destroy(self):
         self.frame.destroy()
