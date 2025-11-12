@@ -31,6 +31,8 @@ def launch_app():
 
         # Page lookup
         page_class = {
+            #'login': loginGUI,
+            #'register': RegisterPage,
             'start': StartGUI,
             'analysis': AnalysisGUI,
             'heliMain': heli.heliMain.HeliMain,

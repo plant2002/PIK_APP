@@ -29,8 +29,7 @@ def rewriting_files():
             # Close the database connection in the finally block
             if connection:
                 conn.close()
-    
-    
+     
 def rewrite(data, mycursor):
     val = []
     field=0
