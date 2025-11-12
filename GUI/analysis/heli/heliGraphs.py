@@ -83,7 +83,7 @@ class HeliGraphs:
                 self.canvas,
                 text=label,
                 **button_style,
-                command=lambda k=key: choose_graph(k))  # replace with your graphing function
+                command=lambda k=key: self.choose_graph(k))  # replace with your graphing function
             btn.place(x=630, y=start_y + i * spacing, width=340, height=35)
 
     def choose_graph(self, name):
