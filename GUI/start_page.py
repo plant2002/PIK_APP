@@ -1,7 +1,7 @@
 import os
 from tkinter import Frame, Button, PhotoImage
 from .dragdrop import DragDrop
-from core import read_files
+from core.files_logic import read_files
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 ASSETS_PATH = os.path.join(ROOT_DIR, "assets")

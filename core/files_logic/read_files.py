@@ -7,7 +7,6 @@ import shutil
 
 
 def read_files_in_folder(folder_path):
-    
     # Check if the folder exists
     if not os.path.exists(folder_path):
         print(f"The folder '{folder_path}' does not exist.")
@@ -31,7 +30,6 @@ def read_files_in_folder(folder_path):
         conn.close()  # Ensure the connection is closed even if an exception occurs
         for file_name in files:
             move_read_files(file_name)
-
 
 def clean_csv(file):
     data = []
