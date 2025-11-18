@@ -7,8 +7,8 @@ TO DO:
 - [x]	create a Jupyter notebook with analysis + export in it
 - [x]	PowerPoint presentation
 - [x]	added client, company, helicopter tables to database
-- [ ]	client login/register
-- [ ]	company login/register
+- [x]	client login/register
+- [x]	company login/register
 - [ ]	add new helicopter GUI + queries
 
 Analysis: 
@@ -43,7 +43,7 @@ Analysis:
 - [x] main page of GUI 
 - [x] GUI is okay now 
 - [x] GUI connect to other frames works okay, all in one file though (GUI2.py) since the links weren't working as they should in multiple files.
-- [ ] Clean up GUI_2
+- [x] Clean up GUI_2
 - [x] uploading csv files to a folder 'uploads' 
 - [x] importing into DB (all works and gets inserted. Failures only when a new code is detected)
 - [x] moving csv after it was processed
