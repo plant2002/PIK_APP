@@ -10,8 +10,15 @@ TO DO:
 - [x]	client login/register
 - [x]	company login/register
 - [ ]	add new helicopter GUI + queries
+- [ ]	how to make sure it's only one guy adding helicopters for the x company?
+- [ ]	how do I link new VEMD .csv to a helicopter that doesn't exist yet (maybe open a new window if I find a FN that isn't yet in the database???)
+- [ ]	how do you transfer/delete helicopters from x company to y company?
 
 Analysis: 
+- [ ]	make analysis bulletproof
+- [ ]	make analysis functions readable and coherent
+- [ ]	make analysis functions depend on logged-in client!!!
+- [ ]	analysis for all data for deviations??? (from all helicopters in database, all helicopters owned by the company or just that helicopter data?)
 - analysis of parameters according to:
 - [x]	Flight duration (per day & per flight)
 - [x]	Engine cycles (2 graphs)
