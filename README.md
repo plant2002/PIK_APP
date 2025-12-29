@@ -1,5 +1,5 @@
 TO DO:
-- [ ]	Make sure it's bulletproof (after presentation, such as that date_from is earlier than date_to, fn_from smaller than fn_to etc)
+- [ ]	Make sure it's bulletproof 
 - [ ]	get the code cleaned up
 - [ ]	connect GUI to functions
 - [ ]	show graphs in GUI Analysis
@@ -17,6 +17,7 @@ TO DO:
 ### Analysis: 
 - [ ]	make analysis bulletproof
 - [ ]	connect analysis with GUI
+- [ ]	check the imported data right away and see if they are outliers and there is a problem (error window?)
 
 ### Graphs & Writings
 
