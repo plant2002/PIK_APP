@@ -19,29 +19,29 @@ Analysis:
 Analysis:
 
 -graphs + writings
-	- [ ] flight time per aircraft (FTAircrafts)
-	- [ ] flight time per aircraft per date (from/to) (FTAircraft)
-	- [ ] errors in last month (write down)
-	- [ ] errors per aircraft (maximum coloured) 1w, 2w, 4w
-	- [ ] errors per aircraft per day (1w, 2w, 4w,...), all aircraft
-	- [ ] aircrafts with x error in the last 1w, 2w, 4w,...
-	- [ ] error occurrence per 1w/2w/4w/6m (all aircraft in company)
-		- average --> OUTLIERS COLOURED (1w,2w,4w + choose 1s,2s, 3s)
+	- [ ]	flight time per aircraft (FTAircrafts)
+	- [ ]	flight time per aircraft per date (from/to) (FTAircraft)
+	- [ ]	errors in last month (write down)
+	- [ ]	errors per aircraft (maximum coloured) 1w, 2w, 4w
+	- [ ]	errors per aircraft per day (1w, 2w, 4w,...), all aircraft
+	- [ ]	aircrafts with x error in the last 1w, 2w, 4w,...
+	- [ ]	error occurrence per 1w/2w/4w/6m (all aircraft in company)
+		-	average --> OUTLIERS COLOURED (1w,2w,4w + choose 1s,2s, 3s)
 		(use all available data for averaging + gauss)
-	- [ ] errors per flight time 1w, 2w, 4w for one aircraft
-	- [ ] engine cycles per aircraft per day 1w, 2w, 4w
-	- [ ] error occurrence per no. of engine cycles
-		- [ ] one helicopter
-		- [ ] all your helicopters
+	- [ ]	errors per flight time 1w, 2w, 4w for one aircraft
+	- [ ]	engine cycles per aircraft per day 1w, 2w, 4w
+	- [ ]	error occurrence per no. of engine cycles
+		- [ ]	one helicopter
+		- [ ]	all your helicopters
 		(add a line of averages)
-	- [ ] number of overlimits per flight for 1w, 2w, 4w
+	- [ ]	number of overlimits per flight for 1w, 2w, 4w
 		-one helicopter compared to average?
 -exports
-	[] heli register number -> export data for:
+	- [ ]	heli register number -> export data for:
 		1d, 2d, 5d, 1w, 2w, 4w,...
-	[] all heli with x error in last 1w, 2w, 4w
-	[] all graphs??? for visual presentation
-	[] all heli exceeding averages-> 1s, 2s, 4s--> for error/overlimit
+	- [ ]	all heli with x error in last 1w, 2w, 4w
+	- [ ]	all graphs??? for visual presentation
+	- [ ]	all heli exceeding averages-> 1s, 2s, 4s--> for error/overlimit
 	
 -	Basic functions:
 - [x] cleaning up CSV 
