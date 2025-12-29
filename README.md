@@ -20,11 +20,11 @@ TO DO:
 
 ### Graphs & Writings
 
-- [ ] Flight time per aircraft (FTAircrafts)
-- [ ] Flight time per aircraft per date (from/to) (FTAircraft)
-- [ ] Errors in last month (written analysis)
-- [ ] Errors per aircraft (maximum coloured) – 1w, 2w, 4w
-- [ ] Errors per aircraft per day – 1w, 2w, 4w (all aircraft)
+- [x] Flight time per aircraft (FTAircrafts)
+- [x] Flight time per aircraft per date (from/to) (FTAircraft)
+- [x] Errors in last month (written analysis)
+- [x] Errors per aircraft (maximum coloured) – 1w, 2w, 4w
+- [x] Errors per aircraft per day – 1w, 2w, 4w (all aircraft)
 - [ ] Aircraft with X error in the last 1w, 2w, 4w
 - [ ] Error occurrence per 1w / 2w / 4w / 6m (all aircraft in company)
   - Average (Gaussian)
