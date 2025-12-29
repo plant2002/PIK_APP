@@ -14,36 +14,42 @@ TO DO:
 - [x]	how do I link new VEMD .csv to a helicopter that doesn't exist yet (maybe open a new window if I find a FN that isn't yet in the database???)
 - [ ]	how do you transfer/delete helicopters from x company to y company?
 
-Analysis: 
+### Analysis: 
 - [ ]	make analysis bulletproof
-Analysis:
+- [ ]	connect analysis with GUI
 
--graphs + writings
-	- [ ]	flight time per aircraft (FTAircrafts)
-	- [ ]	flight time per aircraft per date (from/to) (FTAircraft)
-	- [ ]	errors in last month (write down)
-	- [ ]	errors per aircraft (maximum coloured) 1w, 2w, 4w
-	- [ ]	errors per aircraft per day (1w, 2w, 4w,...), all aircraft
-	- [ ]	aircrafts with x error in the last 1w, 2w, 4w,...
-	- [ ]	error occurrence per 1w/2w/4w/6m (all aircraft in company)
-		-	average --> OUTLIERS COLOURED (1w,2w,4w + choose 1s,2s, 3s)
-		(use all available data for averaging + gauss)
-	- [ ]	errors per flight time 1w, 2w, 4w for one aircraft
-	- [ ]	engine cycles per aircraft per day 1w, 2w, 4w
-	- [ ]	error occurrence per no. of engine cycles
-		- [ ]	one helicopter
-		- [ ]	all your helicopters
-		(add a line of averages)
-	- [ ]	number of overlimits per flight for 1w, 2w, 4w
-		-one helicopter compared to average?
--exports
-	- [ ]	heli register number -> export data for:
-		1d, 2d, 5d, 1w, 2w, 4w,...
-	- [ ]	all heli with x error in last 1w, 2w, 4w
-	- [ ]	all graphs??? for visual presentation
-	- [ ]	all heli exceeding averages-> 1s, 2s, 4s--> for error/overlimit
-	
--	Basic functions:
+### Graphs & Writings
+
+- [ ] Flight time per aircraft (FTAircrafts)
+- [ ] Flight time per aircraft per date (from/to) (FTAircraft)
+- [ ] Errors in last month (written analysis)
+- [ ] Errors per aircraft (maximum coloured) – 1w, 2w, 4w
+- [ ] Errors per aircraft per day – 1w, 2w, 4w (all aircraft)
+- [ ] Aircraft with X error in the last 1w, 2w, 4w
+- [ ] Error occurrence per 1w / 2w / 4w / 6m (all aircraft in company)
+  - Average (Gaussian)
+  - Outliers coloured (1σ, 2σ, 3σ)
+  - Uses all available data for averaging
+- [ ] Errors per flight time – 1w, 2w, 4w (one aircraft)
+- [ ] Engine cycles per aircraft per day – 1w, 2w, 4w
+- [ ] Error occurrence per number of engine cycles
+  - [ ] One helicopter
+  - [ ] All helicopters
+  - Includes average line
+- [ ] Number of overlimits per flight – 1w, 2w, 4w
+  - One helicopter compared to company average
+
+### Exports
+
+- [ ] Export by helicopter register number:
+  - 1d, 2d, 5d, 1w, 2w, 4w
+- [ ] All helicopters with X error in last 1w, 2w, 4w
+- [ ] All graphs for visual presentation
+- [ ] Helicopters exceeding averages (1σ, 2σ, 4σ) for error / overlimit
+
+
+
+### Basic functions:
 - [x] cleaning up CSV 
 - [x] database 
 - [x] connecting DB to python 
