@@ -1,15 +1,15 @@
 TO DO:
 - [ ]	Make sure it's bulletproof 
-- [ ]	get the code cleaned up
+- [x]	get the code cleaned up
 - [ ]	connect GUI to functions
 - [ ]	show graphs in GUI Analysis
-- [ ]	change GUI Analysis
+- [x]	change GUI Analysis
 - [x]	create a Jupyter notebook with analysis + export in it
 - [x]	PowerPoint presentation
 - [x]	added client, company, helicopter tables to database
 - [x]	client login/register
 - [x]	company login/register
-- [ ]	add new helicopter GUI + queries
+- [x]	add new helicopter GUI + queries
 - [ ]	how to make sure it's only one guy adding helicopters for the x company?
 - [x]	how do I link new VEMD .csv to a helicopter that doesn't exist yet (maybe open a new window if I find a FN that isn't yet in the database???)
 - [ ]	how do you transfer/delete helicopters from x company to y company?
@@ -26,18 +26,18 @@ TO DO:
 - [x] Errors in last month (written analysis)
 - [x] Errors per aircraft (maximum coloured) – 1w, 2w, 4w
 - [x] Errors per aircraft per day – 1w, 2w, 4w (all aircraft)
-- [ ] Aircraft with X error in the last 1w, 2w, 4w
-- [ ] Error occurrence per 1w / 2w / 4w / 6m (all aircraft in company)
+- [x] Aircraft with X error in the last 1w, 2w, 4w
+- [x] Error occurrence per 1w / 2w / 4w / 6m (all aircraft in company)
   - Average (Gaussian)
   - Outliers coloured (1σ, 2σ, 3σ)
   - Uses all available data for averaging
-- [ ] Errors per flight time – 1w, 2w, 4w (one aircraft)
-- [ ] Engine cycles per aircraft per day – 1w, 2w, 4w
-- [ ] Error occurrence per number of engine cycles
-  - [ ] One helicopter
-  - [ ] All helicopters
+- [x] Errors per flight time – 1w, 2w, 4w (one aircraft)
+- [x] Engine cycles per aircraft per day – 1w, 2w, 4w
+- [x] Error occurrence per number of engine cycles
+  - [x] One helicopter
+  - [x] All helicopters
   - Includes average line
-- [ ] Number of overlimits per flight – 1w, 2w, 4w
+- [x] Number of overlimits per flight – 1w, 2w, 4w
   - One helicopter compared to company average
 
 ### Exports
